@@ -12,7 +12,7 @@ FIXED_HOME=/app
 mkdir -p $CACHE_DIR
 
 if [ ! -e $CACHE_DIR/ghc ]; then
-  GHC_URL="http://grozdova.com/ghc.tar.gz"
+  GHC_URL="https://dl.dropboxusercontent.com/u/2187042/ghc.tar.gz"
   echo "-----> Downloading GHC"
   curl -# --max-time 120 -L "$GHC_URL" | tar xz -C $CACHE_DIR
 fi
@@ -31,7 +31,7 @@ if [ -e $CACHE_DIR/cabal ]; then
   rm -rf $FIXED_HOME/.cabal
   mv $CACHE_DIR/cabal $FIXED_HOME/.cabal
 elif [ ! -e $FIXED_HOME/.cabal ]; then
-  CABAL_URL="http://grozdova.com/cabal.tar.gz"
+  CABAL_URL="https://dl.dropboxusercontent.com/u/2187042/cabal.tar.gz"
   echo "-----> Downloading Cabal"
   curl -# --max-time 120 -L "$CABAL_URL" | tar xz -C $FIXED_HOME
 fi
